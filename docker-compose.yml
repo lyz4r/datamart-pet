@@ -192,7 +192,7 @@ services:
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
-      - AIRFLOW__CORE__FERNET_KEY=please_change_me
+      - AIRFLOW__CORE__FERNET_KEY=3TtUo5L9X7JkRq2W5yN6zB8vC1eF0gH2kJ4kL6mN8pQ=
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
     networks: [de_net]
 
@@ -209,11 +209,11 @@ services:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
       - AIRFLOW__WEBSERVER__RBAC=True
-      - AIRFLOW__CORE__FERNET_KEY=please_change_me
+      - AIRFLOW__CORE__FERNET_KEY=3TtUo5L9X7JkRq2W5yN6zB8vC1eF0gH2kJ4kL6mN8pQ=
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW_CONN_S3_CONN=s3://minio:minio123@minio:9000/
     volumes:
-      - ./dags:/opt/airflow/dags
+      #- ./dags:/opt/airflow/dags закомменчено чтобы работать напрямую из контейнера
       - ./plugins:/opt/airflow/plugins
       - ./logs:/opt/airflow/logs
     ports:
@@ -232,7 +232,7 @@ services:
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres-airflow:5432/airflow
-      - AIRFLOW__CORE__FERNET_KEY=please_change_me
+      - AIRFLOW__CORE__FERNET_KEY=3TtUo5L9X7JkRq2W5yN6zB8vC1eF0gH2kJ4kL6mN8pQ=
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW_CONN_S3_CONN=s3://minio:minio123@minio:9000/
     volumes:

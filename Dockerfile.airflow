@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y curl && \
     tar -xzf OpenJDK11.tar.gz -C /opt/java/openjdk11 --strip-components=1 && \
     rm OpenJDK11.tar.gz
 
+
 # Копируем JAR файлы для Spark (поддержка MinIO и Clickhouse)
 COPY ./spark/jars/aws-java-sdk-bundle-1.12.526.jar /opt/jars/
 COPY ./spark/jars/hadoop-aws-3.3.6.jar /opt/jars/
