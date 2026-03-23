@@ -30706,3 +30706,35 @@ File Path                           PID  Runtime      # DAGs    # Errors  Last R
 /opt/airflow/dags/dbt_run_dag.py   2891  0.01s             1           0  0.09s           2026-03-23T19:28:30
 ================================================================================
 [2026-03-23T19:30:13.526+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2026-03-23T19:31:05.712+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2026-03-23T19:31:05.713+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2026-03-23T19:31:05.714+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-03-23T19:31:05.714+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2026-03-23T19:31:05.776+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2026-03-23T19:31:05.997+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                           PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/dbt_run_dag.py    172  0.03s             0           0
+/opt/airflow/dags/eshop_dag.py      169  0.16s             0           0
+================================================================================
+[2026-03-23T19:31:38.134+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/eshop_dag.py                             1           0  0.14s           2026-03-23T19:31:37
+/opt/airflow/dags/dbt_run_dag.py                           1           0  0.09s           2026-03-23T19:31:37
+================================================================================
+[2026-03-23T19:32:09.400+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                         PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+--------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/eshop_dag.py                             1           0  0.15s           2026-03-23T19:32:07
+/opt/airflow/dags/dbt_run_dag.py                           1           0  0.09s           2026-03-23T19:32:07
+================================================================================
