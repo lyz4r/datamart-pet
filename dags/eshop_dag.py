@@ -184,10 +184,10 @@ default_args = {
 }
 
 with DAG(
-    'eshop_dag',
+    'mock_data_eshop',
     default_args=default_args,
     description='DAG для генерации и визуализации данных розничного онлайн-магазина',
-    schedule_interval='@daily',
+    schedule_interval="* * * * *",
     start_date=datetime(2026, 3, 18),
     catchup=False,
     tags=['eshop'],

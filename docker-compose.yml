@@ -213,9 +213,10 @@ services:
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW_CONN_S3_CONN=s3://minio:minio123@minio:9000/
     volumes:
-      #- ./dags:/opt/airflow/dags закомменчено чтобы работать напрямую из контейнера
+      - ./dags:/opt/airflow/dags
       - ./plugins:/opt/airflow/plugins
       - ./logs:/opt/airflow/logs
+      - /var/run/docker.sock:/var/run/docker.sock
     ports:
       - "8080:8080"
     networks: [de_net]
@@ -235,10 +236,12 @@ services:
       - AIRFLOW__CORE__FERNET_KEY=3TtUo5L9X7JkRq2W5yN6zB8vC1eF0gH2kJ4kL6mN8pQ=
       - AIRFLOW__CORE__LOAD_EXAMPLES=False
       - AIRFLOW_CONN_S3_CONN=s3://minio:minio123@minio:9000/
+      - HOST_PROJECT_DIR=${PWD}
     volumes:
       - ./dags:/opt/airflow/dags
       - ./plugins:/opt/airflow/plugins
       - ./logs:/opt/airflow/logs
+      - /var/run/docker.sock:/var/run/docker.sock
     networks: [de_net]
 
 

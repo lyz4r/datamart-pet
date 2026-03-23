@@ -8,8 +8,8 @@ RUN /app/.venv/bin/python -m ensurepip \
 
 # Фиксируем версии совместимые с Superset
 RUN /app/.venv/bin/python -m pip install \
-        "SQLAlchemy<2" \
-        clickhouse-sqlalchemy==0.2.2 \
-        clickhouse-driver==0.2.9
+    "SQLAlchemy<2" \
+    clickhouse-sqlalchemy==0.2.2 \
+    clickhouse-driver==0.2.9
 
 USER superset
