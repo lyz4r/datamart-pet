@@ -1,8 +1,8 @@
-ИНСТРУКЦИИ
-config
-notebooks
-logs
+/ИНСТРУКЦИИ
+/config
+/notebooks
+/logs
 *.log
-spark
-scripts
+/spark
+/scripts
 .devcontainer

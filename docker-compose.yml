@@ -23,7 +23,7 @@ services:
   # ---------- Postgres for app ----------
   postgres-src:
     image: postgres:14
-    container_name: postgres-src
+    container_name: postgres-srcq
     command: postgres -c wal_level=logical -c max_replication_slots=5 -c max_wal_senders=5
     environment:
       - POSTGRES_USER=postgres
@@ -274,6 +274,8 @@ services:
       - ./dbt/profiles.yml:/root/.dbt/profiles.yml
     networks:
      - de_net
+    ports:
+     - "8086:8086"
 
   # --------- Spark ----------
   spark:
