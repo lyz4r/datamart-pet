@@ -1,8 +1,11 @@
+.devcontainer
+
 /ИНСТРУКЦИИ
 /config
 /notebooks
 /logs
-*.log
-/spark
+/spark/jars/aws*
 /scripts
-.devcontainer
+
+*.log
+
