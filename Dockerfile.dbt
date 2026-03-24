@@ -1,0 +1,9 @@
+FROM python:3.13-slim
+
+RUN pip install --upgrade pip \
+    && pip install dbt-core dbt-postgres
+RUN apt-get update && apt-get install -y git
+
+WORKDIR /usr/app
+
+CMD ["sleep", "infinity"]

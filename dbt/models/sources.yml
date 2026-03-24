@@ -1,0 +1,81 @@
+version: 2
+
+sources:
+  - name: eshop
+    schema: eshop
+    database: mydb
+    description: "Исходные данные интернет-магазина"
+    tables:
+      - name: users
+        description: "Пользователи магазина"
+        columns:
+        - name: id
+          description: "Уникальный идентификатор пользователя"
+          tests:
+            - unique
+            - not_null
+        - name: name
+          description: "Имя (по паспорту)"
+          tests:
+            - not_null
+        - name: email
+          description: "Электронная почта пользователя"
+          tests:
+            - not_null
+        - name: birthdate
+          description: "Дата рождения пользователя"
+      - name: products
+        description: "Товары"
+        columns:
+          - name: id
+            description: "Уникальный идентификатор товара"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Название товара"
+            tests:
+              - unique
+          - name: category
+            description: "Категория товара"
+          - name: price
+            description: "Цена товара"
+            tests:
+              - not_null
+          - name: description
+            description: "Описание товара"
+      
+      - name: orders
+        description: "Заказы"
+        columns:
+          - name: id
+            description: "Уникальный идентификатор заказа"
+            tests:
+              - unique
+              - not_null
+          - name: user_id
+            description: "ID пользователя, сделавшего заказ"
+            tests:
+              - not_null
+          - name: order_timestamp
+            description: "Дата и время заказа"
+            tests:
+              - not_null
+          - name: delivery_city
+            description: "Город доставки"
+      
+      - name: orders_products
+        description: "Связь заказов с товарами"
+        columns:
+          - name: order_id
+            description: "ID заказа"
+            tests:
+              - not_null
+          - name: product_id
+            description: "ID товара"
+            tests:
+              - not_null
+          - name: quantity
+            description: "Количество товара"
+            tests:
+              - not_null

@@ -1,0 +1,8 @@
+/ИНСТРУКЦИИ
+/config
+/notebooks
+/logs
+*.log
+/spark
+/scripts
+.devcontainer
