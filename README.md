@@ -152,7 +152,7 @@ wait_for_data_gen
 | Задача | Описание |
 |--------|----------|
 | `wait_for_data_gen` | Ждёт успешного завершения `mock_data_eshop` |
-| `dbt_run` | Запускает все dbt-модели в контейнере `de1-dbt` |
+| `dbt_run` | Запускает все dbt-модели в контейнере `datamart-pet-dbt` |
 | `dbt_test` | Прогоняет dbt-тесты для контроля качества данных |
 
 Расписание: каждую минуту (`* * * * *`), после завершения генерации данных
@@ -172,7 +172,7 @@ wait_for_data_gen
 ```bash
 # Клонировать репозиторий
 git clone <repo-url>
-cd de1
+cd datamart-pet
 
 # Собрать и запустить все сервисы
 docker-compose up -d --build

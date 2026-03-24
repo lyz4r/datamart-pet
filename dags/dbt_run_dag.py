@@ -31,11 +31,11 @@ with DAG(
 
     dbt_run = DockerOperator(
         task_id="dbt_run",
-        image="de1-dbt",
+        image="datamart-pet-dbt",
         command="dbt run",
         working_dir="/usr/app",
         docker_url="unix://var/run/docker.sock",
-        network_mode="de1_de_net",
+        network_mode="datamart-pet_de_net",
         mount_tmp_dir=False,
         mounts=[
             Mount(
@@ -54,11 +54,11 @@ with DAG(
 
     dbt_test = DockerOperator(
         task_id="dbt_test",
-        image="de1-dbt",
+        image="datamart-pet-dbt",
         command="dbt test",
         working_dir="/usr/app",
         docker_url="unix://var/run/docker.sock",
-        network_mode="de1_de_net",
+        network_mode="datamart-pet_de_net",
         mount_tmp_dir=False,
         mounts=[
             Mount(
