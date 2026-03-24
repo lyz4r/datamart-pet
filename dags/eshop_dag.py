@@ -76,13 +76,24 @@ def generate_products():
         conn = hook.get_conn()
         cursor = conn.cursor()
 
-        cursor.execute("SELECT COUNT(id) FROM eshop.products;")
-        if cursor.fetchone():
+        cursor.execute("SELECT COUNT(*) FROM eshop.products;")
+        count = cursor.fetchone()[0]
+
+        if count > 0:
+            print(f"Товары уже существуют ({count} шт.), пропускаем вставку.")
+            cursor.close()
+            conn.close()
             return
-        cursor.execute("queries/insert_products.sql")
-        cursor.execute("SELECT COUNT(id) FROM eshop.products;")
-        count = cursor.fetchone()
-        print(f"Выполнена вставка {count} новых товаров.")
+
+        # Читаем и выполняем SQL-файл
+        with open("/opt/airflow/dags/queries/insert_products.sql", "r") as f:
+            sql = f.read()
+        cursor.execute(sql)
+        conn.commit()
+
+        cursor.execute("SELECT COUNT(*) FROM eshop.products;")
+        count = cursor.fetchone()[0]
+        print(f"Вставлено товаров: {count}")
 
         cursor.close()
         conn.close()

@@ -27,7 +27,7 @@ PostgreSQL (источник)
     │         генерация данных                                                 │
     │         (Faker: users, products, orders)                                 │
     │                                                                          ▼
-    └── [Streaming] Debezium CDC → Kafka → MinIO                         ClickHouse
+    └── [Streaming, потом] Debezium CDC → Kafka → MinIO                         Postgresql (потом ClickHouse)
                                                │                              │
                                             Spark                             │
                                                └──────────────────────────────┤
